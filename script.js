@@ -1,5 +1,6 @@
 const audio = document.getElementById("audio_player");
 
+//Music controls
 function play_pause(element) {
     if (audio.paused) {
         audio.play();
@@ -72,6 +73,7 @@ function mouseover(element) {
     element.setAttribute("src", "./assets/icons/white/" + iconName);
 }
 
+// Icon controls
 function mouseout(element) {
     const iconName = newIconName(element.getAttribute("id"));
 
@@ -81,7 +83,10 @@ function mouseout(element) {
 function newIconName(id) {
     switch (id) {
         case "play_pause":
-            return "013-play.svg";
+            if (audio.paused)
+                return "013-play.svg";
+            else
+                return "021-pause.svg"
 
         case "stop":
             return "003-stop.svg";
@@ -99,6 +104,9 @@ function newIconName(id) {
             return "019-reduce-volume.svg";
 
         case "mute":
-            return "030-mute.svg";
+            if (audio.muted)
+                return "034-volume-adjustment.svg"
+            else
+                return "030-mute.svg";
     }
 }
