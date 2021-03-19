@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+
+    <title>Audio Player</title>
+</head>
+
+<body>
+    <main>
+        <h1>Audio Player</h1>
+
+        <audio id="audio_player">
+            <source src="./assets/audio/Bright_Eyed_Blues.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="controls">
+            <img id="play_pause" src="./assets/icons/013-play.svg" onclick="play_pause(this)"
+                onmouseover="mouseover(this)" onmouseout="mouseout(this)" width="50px">
+            <img id="stop" src="./assets/icons/003-stop.svg" onclick="stop()" onmouseover="mouseover(this)"
+                onmouseout="mouseout(this)" width="50px">
+            <img id="back" src="./assets/icons/040-backward.svg" onclick="back()" onmouseover="mouseover(this)"
+                onmouseout="mouseout(this)" width="50px">
+            <img id="forward" src="./assets/icons/032-forwards.svg" onclick="forward()" onmouseover="mouseover(this)"
+                onmouseout="mouseout(this)" width="50px">
+            <div>
+                <img id="increase_volume" src="./assets/icons/035-volume-up.svg" onclick="increase_volume()"
+                    onmouseover="mouseover(this)" onmouseout="mouseout(this)" width="50px">
+                <img id="decrease_volume" src="./assets/icons/019-reduce-volume.svg" onclick="decrease_volume()"
+                    onmouseover="mouseover(this)" onmouseout="mouseout(this)" width="50px">
+                <img id="mute" src="./assets/icons/030-mute.svg" onclick="mute()" onmouseover="mouseover(this)"
+                    onmouseout="mouseout(this)" width="50px">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p id="developer_credits">Developed by: Paulo Losse</p>
+        <p id="icon_credits">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a>
+        </p>
+    </footer>
+
+
+    <script src="./script.js"> </script>
+</body>
+
+</html>
