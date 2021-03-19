@@ -1,8 +1,10 @@
 body{
     zoom: 0%;
-    background-color: teal;
     margin: 0;  
-    text-align: center;    
+    text-align: center;  
+    background-color: darkslateblue;
+    background-image: url("./assets/images/audio_player.png");
+    background-position-x: center;
 }
 
 .controls img{
@@ -10,6 +12,7 @@ body{
 }
 
 footer{
+    color: white;
     text-decoration: none;
     font-size: 15px;
     position: absolute;
