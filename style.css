@@ -7,6 +7,41 @@ body{
     background-position-x: center;
 }
 
+progress[value]{
+    width: 200px;
+    margin-bottom: 2px;
+    height: 7px;
+    border: none;
+}
+
+progress[value]::-webkit-progress-bar{
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15) inset;
+}
+
+progress[value]::-webkit-progress-value{
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+    background-color: rgba(0, 128, 128, 0.637);
+    background-image: -webkit-linear-gradient(left, rgba(0, 255, 255, 0.75), rgba(8, 21, 49, 0.2));
+}
+
+span{
+    position: relative;
+    left: -20px;
+}
+
+.time{
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 13px;
+    position: absolute;
+    right: -40px;
+    top: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .controls img{
     padding: 10px;
 }
