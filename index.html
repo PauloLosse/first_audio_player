@@ -14,9 +14,15 @@
     <main>
         <h1>Audio Player</h1>
 
-        <audio id="audio_player">
+        <audio id="audio_player" ontimeupdate="timeUpdate()">
             <source src="./assets/audio/Bright_Eyed_Blues.mp3" type="audio/mpeg">
         </audio>
+
+        <span>
+            <progress id="progress" onclick="listener(event)" value="0" max="100"></progress>
+            <div class="time">00:00</div>
+        </span>
+
 
         <div class="controls">
             <img id="play_pause" src="./assets/icons/013-play.svg" onclick="play_pause(this)"

@@ -1,5 +1,31 @@
 const audio = document.getElementById("audio_player");
 
+// Progress bar
+function listener(event) {
+    const progressBar = document.getElementById("progress");
+
+    const percentage = Math.floor((event.offsetX / progressBar.offsetWidth) * 100);
+    audio.currentTime = audio.duration * percentage / 100;
+    progressBar.value = audio.currentTime;
+
+}
+
+function timeUpdate() {
+    const progressBar = document.getElementById("progress");
+    const timeLabel = document.getElementsByClassName("time")[0];
+
+    const currentTime = audio.currentTime
+    progressBar.value = currentTime / audio.duration * 100;
+
+    const minutes = Math.floor(currentTime / 60);
+    const formattedMinutes = (minutes < 10 ? '0' : '') + minutes;
+    const seconds = Math.round(currentTime % 60);
+    const formattedSeconds = (seconds < 10 ? '0' : '') + seconds;
+    timeLabel.innerHTML = formattedMinutes + ":" + formattedSeconds;
+
+    setInterval(timeUpdate, 1000);
+}
+
 //Music controls
 function play_pause(element) {
     if (audio.paused) {
@@ -67,13 +93,22 @@ function mute() {
     }
 }
 
-function mouseover(element) {
-    const iconName = newIconName(element.getAttribute("id"));
+// Icon controls
+var isTouch = false;
+document.addEventListener('touchstart', toggleIsTouch);
 
-    element.setAttribute("src", "./assets/icons/white/" + iconName);
+function toggleIsTouch() {
+    isTouch = true;
 }
 
-// Icon controls
+function mouseover(element) {
+    if (!isTouch) {
+        const iconName = newIconName(element.getAttribute("id"));
+
+        element.setAttribute("src", "./assets/icons/white/" + iconName);
+    }
+}
+
 function mouseout(element) {
     const iconName = newIconName(element.getAttribute("id"));
 
